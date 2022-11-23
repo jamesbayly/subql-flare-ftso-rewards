@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@subql/cli": "latest",
-    "@subql/node-flare": "lastest",
     "@subql/types": "latest",
     "typescript": "4.5.5"
   }

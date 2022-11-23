@@ -33,16 +33,16 @@ dataSources:
     options:
       # Must be a key of assets
       abi: ftsoRewardManager
-      address: "0xc5738334b972745067ffa666040fdeadc66cb925"
+      address: "0xc5738334b972745067ffa666040fdeadc66cb925" # https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925
     assets:
       ftsoRewardManager:
-        file: "ftsoRewardManager.abi.json"
+        file: "ftsoRewardManager.abi.json" # Import the correct contract file
     mapping:
       file: "./dist/index.js"
       handlers:
         - handler: handleLog
           kind: flare/LogHandler
-          # filter:
-          # topics:
-          ## Follows standard log filters https://docs.ethers.io/v5/concepts/events/
-          # - RewardClaimed(address indexed dataProvider, address indexed whoClaimed, address indexed sentTo, uint256 rewardEpoch, uint256 amount)
+          filter:
+            topics:
+              ## Follows standard log filters https://docs.ethers.io/v5/concepts/events/
+              - RewardClaimed(address indexed dataProvider, address indexed whoClaimed, address indexed sentTo, uint256 rewardEpoch, uint256 amount)

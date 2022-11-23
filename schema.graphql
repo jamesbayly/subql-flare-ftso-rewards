@@ -13,6 +13,6 @@ type Reward @entity {
 
 type Address @entity {
   id: ID! # accountIDs
-  reievedRewards: [Reward] @derivedFrom(field: "recipient")
+  receivedRewards: [Reward] @derivedFrom(field: "recipient")
   claimedRewards: [Reward] @derivedFrom(field: "whoClaimed")
 }
