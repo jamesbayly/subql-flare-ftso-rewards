@@ -1,0 +1,48 @@
+specVersion: "1.0.0"
+name: "flare-ftso-rewards"
+version: "0.0.1"
+runner:
+  node:
+    name: "@subql/node-flare"
+    version: "*"
+  query:
+    name: "@subql/query"
+    version: "*"
+description: "This project can be use as a starting point for developing your new Flare SubQuery project"
+repository: "https://github.com/subquery/flare-ftso-rewards"
+
+schema:
+  file: "./schema.graphql"
+
+network:
+  # chainId is the EVM Chain ID, for Flare Songbird this is 19
+  # https://chainlist.org/chain/14
+  chainId: "19"
+  # This endpoint must be a public non-pruned archive node
+  # Public nodes may be rate limited, which can affect indexing speed
+  # When developing your project we suggest getting a private API key
+  # You can get them from Flare's API Portal
+  # https://api-portal.flare.network/
+  endpoint: https://songbird-api.flare.network/ext/C/rpc
+  # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
+  # dictionary: "https://api.subquery.network/sq/subquery/flare-songbird-dictionary"
+
+dataSources:
+  - kind: flare/Runtime
+    startBlock: 26625930
+    options:
+      # Must be a key of assets
+      abi: ftsoRewardManager
+      address: "0xc5738334b972745067ffa666040fdeadc66cb925"
+    assets:
+      ftsoRewardManager:
+        file: "ftsoRewardManager.abi.json"
+    mapping:
+      file: "./dist/index.js"
+      handlers:
+        - handler: handleLog
+          kind: flare/LogHandler
+          # filter:
+          # topics:
+          ## Follows standard log filters https://docs.ethers.io/v5/concepts/events/
+          # - RewardClaimed(address indexed dataProvider, address indexed whoClaimed, address indexed sentTo, uint256 rewardEpoch, uint256 amount)

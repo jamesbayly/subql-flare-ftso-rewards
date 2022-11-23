@@ -1,0 +1,35 @@
+{
+  "name": "flare-ftso-rewards",
+  "version": "0.0.1",
+  "description": "This project can be use as a starting point for developing your new Flare SubQuery project. It indexes all rewards from the Flare FTSO Reward Manager",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "subql build",
+    "codegen": "subql codegen",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
+    "dev": "subql codegen && subql build && docker-compose pull && docker-compose up --remove-orphans",
+    "prepack": "rm -rf dist && npm run build",
+    "test": "jest"
+  },
+  "homepage": "https://github.com/jamesbayly/subql-flare-ftso-rewards",
+  "repository": "github:jamesbayly/subql-flare-ftso-rewards",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "SubQuery Team",
+  "license": "MIT",
+  "dependencies": {
+    "@subql/common": "latest",
+    "@subql/types-flare": "latest",
+    "@subql/validator": "latest",
+    "assert": "^2.0.0"
+  },
+  "devDependencies": {
+    "@subql/cli": "latest",
+    "@subql/node-flare": "lastest",
+    "@subql/types": "latest",
+    "typescript": "4.5.5"
+  }
+}
