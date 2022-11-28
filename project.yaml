@@ -29,7 +29,7 @@ network:
 
 dataSources:
   - kind: flare/Runtime
-    startBlock: 26625930
+    startBlock: 36036 # Block that this contract was deployed
     options:
       # Must be a key of assets
       abi: ftsoRewardManager
