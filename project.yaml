@@ -16,7 +16,7 @@ schema:
 
 network:
   # chainId is the EVM Chain ID, for Flare Songbird this is 19
-  # https://chainlist.org/chain/14
+  # https://chainlist.org/chain/19
   chainId: "19"
   # This endpoint must be a public non-pruned archive node
   # Public nodes may be rate limited, which can affect indexing speed
@@ -25,7 +25,7 @@ network:
   # https://api-portal.flare.network/
   endpoint: https://songbird-api.flare.network/ext/C/rpc
   # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
-  # dictionary: "https://api.subquery.network/sq/subquery/flare-songbird-dictionary"
+  dictionary: https://api.subquery.network/sq/subquery/flare-songbird-dictionary
 
 dataSources:
   - kind: flare/Runtime
