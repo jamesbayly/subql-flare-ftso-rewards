@@ -24,9 +24,6 @@ network:
   # You can get them from Flare's API Portal
   # https://api-portal.flare.network/
   endpoint: https://songbird-api.flare.network/ext/C/rpc
-  # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
-  dictionary: https://api.subquery.network/sq/subquery/flare-songbird-dictionary
-
 dataSources:
   - kind: flare/Runtime
     startBlock: 36036 # Block that this contract was deployed
